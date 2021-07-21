@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <title>Le Règlement &mdash; Radio</title>
+    <link rel="icon" type="icon" href="https://cdn.shopify.com/s/files/1/0004/4099/1797/collections/reglement_grande.png?v=1552659160" />
+    <style>
+
+        /* Styling the body */
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Styling the backgroun image by
+        giving its url and position */
+        .container {
+            height: 100vh;
+            width: 100%;
+            background-image: url(
+'http://1863.fr/wp-content/uploads/2020/01/maxresdefault.jpg');
+            
+            /* Image used: */
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        /* Styling the list tags to the
+        right of the navigation bar */
+        .nav li {
+            float: right;
+            list-style: none;
+        }
+
+        /* Styling the anchor tags of
+        the navigation bar */
+        .nav a {
+            font-family: "Open Sans", Arial, sans-serif;
+            list-style: none;
+            height: 50px;
+            line-height: 50px;
+            font-size: 1rem;
+            font-weight: 550;
+            display: block;
+            padding: 5px 35px;
+            color: white;
+            text-decoration: none;
+            font-style: oblique;
+        }
+
+        /* Giving positon and margin
+        to the content-div */
+        .content {
+            width: 100%;
+            position: absolute;
+            top: 45%;
+        }
+
+        /* Styling the left-col by
+        giving margin */
+        .left-col {
+            margin-left: 5%;
+        }
+
+        /* Styling the my sound plcaed
+        in the left-col */
+        .left-col h1 {
+            font-family: "Open Sans", Arial, sans-serif;
+            font-size: 50px;
+            color: crimson;
+        }
+
+        /* Styling the right-col */
+        .right-col {
+            float: right;
+            margin-right: 5%;
+            margin-top: -10%;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Styling the text in the right-col */
+        .right-col p {
+            font-family: "Open Sans", Arial, sans-serif;
+            font-size: 21px;
+            color: white;
+            font-weight: 650;
+            margin-right: 20px;
+        }
+
+        /* Styling the cursor type
+        of the icon to pointer */
+        #icon {
+            cursor: pointer;
+        }
+
+        .credit {
+            font-family: "Open Sans", Arial, sans-serif;
+            list-style: none;
+            height: 50px;
+            line-height: 50px;
+            font-size: 1rem;
+            font-weight: 550;
+            display: block;
+            padding: 5px 35px;
+            color: white;
+            text-decoration: none;
+            font-style: oblique;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav">
+            <li><a href="https://linktr.ee/lereglement">Réseaux</a></li>
+            <li><a href="https://shop.lereglement.sale/">Boutique</a></li>
+            <li><a href="https://lereglement.sale/">Site Officiel</a></li>
+            <li><a href="#">Applications Radio</a></li>
+            <li><a href="#">Home</a></li>
+        </ul>
+        <p class="credit"><small>Version bêta, Non affilié au <a href="https://play.google.com/store/apps/details?id=com.reglement&hl=en_US&gl=US">Règlement Radio</a></small></p>
+    </div>
+
+    <div class="content">
+        <div class="left-col">
+            <h1>Le Réglement <br>Radio</h1>
+        </div>
+
+        <div class="right-col">
+            <p>Clique pour écouter <br>Radio Reglement</p>
+            <img src="assets/play.png" id="icon">
+        </div>
+    </div>
+
+    <audio id="mysound">
+        <source src="https://radio.lereglement.sale/stream" type="audio/mp3">
+    </audio>
+
+    <script>
+        var mysound = document.getElementById("mysound");
+        var icon = document.getElementById("icon");
+
+        // Creating a function that will change
+        // pause to play and vice-versa
+        icon.onclick = function() {
+            if (mysound.paused) {
+
+                // If paused then play the
+                // music and change the image
+                mysound.play();
+                icon.src =
+"assets/pause.png";
+            } else {
+
+                // If playing then pause the
+                // music and change the image
+                mysound.pause();
+                icon.src =
+"assets/play.png";
+            }
+        }
+    </script>
+</body>
+
+</html>
+
